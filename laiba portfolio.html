@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Laiba’s | Web Developer</title>
+
+<meta name="description" content="Laiba’s - Professional Web Developer Portfolio. Responsive websites, UI/UX, WordPress and creative digital solutions.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f4d878;
+    --gold-dark:#9c7415;
+    --black:#050505;
+    --dark:#0c0c0c;
+    --dark2:#111111;
+    --white:#ffffff;
+    --gray:#a5a5a5;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--black);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+::selection{
+    background:var(--gold);
+    color:#000;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:17px 7%;
+    z-index:9999;
+
+    background:rgba(5,5,5,.78);
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(212,175,55,.15);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+}
+
+/* Golden L logo */
+
+.logo-mark{
+    width:43px;
+    height:43px;
+
+    border:1px solid var(--gold);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    transform:rotate(45deg);
+
+    box-shadow:
+    0 0 15px rgba(212,175,55,.08);
+}
+
+.logo-mark::before{
+    content:"";
+    position:absolute;
+
+    width:31px;
+    height:31px;
+
+    border:1px solid rgba(244,216,120,.35);
+}
+
+.logo-mark span{
+    transform:rotate(-45deg);
+
+    font-family:'Playfair Display',serif;
+
+    font-size:23px;
+    font-weight:700;
+
+    color:var(--gold-light);
+
+    position:relative;
+    z-index:2;
+}
+
+.logo-name{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+.logo-name span{
+    color:var(--gold-light);
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    color:#d5d5d5;
+    font-size:13px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:1px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--gold-light);
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.menu{
+    display:none;
+    color:var(--gold-light);
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.97) 0%,
+        rgba(0,0,0,.86) 42%,
+        rgba(0,0,0,.40) 100%
+    ),
+
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-150px;
+    top:20%;
+
+    background:var(--gold);
+
+    filter:blur(180px);
+
+    opacity:.12;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    margin-left:8%;
+
+    max-width:760px;
+
+    padding-top:80px;
+}
+
+.hero-small{
+    color:var(--gold-light);
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(55px,7vw,95px);
+
+    line-height:.98;
+
+    margin-bottom:27px;
+}
+
+.hero h1 span{
+    color:var(--gold-light);
+}
+
+.hero-description{
+
+    color:#c5c5c5;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    max-width:620px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:36px;
+}
+
+.btn{
+
+    padding:14px 28px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    border-radius:3px;
+
+    transition:.3s;
+}
+
+.btn-gold{
+
+    color:#080808;
+
+    background:
+    linear-gradient(
+        135deg,
+        #a87c16,
+        #f4d878,
+        #b98a1b
+    );
+
+    box-shadow:
+    0 8px 25px rgba(212,175,55,.12);
+}
+
+.btn-gold:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 12px 35px rgba(212,175,55,.25);
+}
+
+.btn-outline{
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.btn-outline:hover{
+
+    border-color:var(--gold);
+
+    color:var(--gold-light);
+
+    transform:translateY(-3px);
+}
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section{
+    padding:110px 8%;
+}
+
+.section-heading{
+    margin-bottom:55px;
+}
+
+.section-heading small{
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:48px;
+
+    line-height:1.2;
+
+    margin-top:10px;
+}
+
+.section-heading p{
+
+    color:#888;
+
+    max-width:600px;
+
+    margin-top:14px;
+
+    line-height:1.8;
+}
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+    background:#0b0b0b;
+}
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:.9fr 1.1fr;
+
+    gap:75px;
+
+    align-items:center;
+}
+
+.about-photo{
+
+    height:520px;
+
+    border:1px solid rgba(212,175,55,.35);
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.1),
+        rgba(0,0,0,.55)
+    ),
+
+    url("https://images.unsplash.com/photo-1573495628363-04667cedc587?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybCUyMHdlYiUyMGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D");
+
+    background-size:cover;
+
+    background-position:center;
+
+    position:relative;
+}
+
+.about-photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:80%;
+
+    height:80%;
+
+    border:1px solid rgba(212,175,55,.25);
+
+    left:10%;
+
+    top:10%;
+}
+
+.about-content h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:40px;
+
+    margin-bottom:22px;
+}
+
+.about-content p{
+
+    color:#999;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.about-points{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.about-points div{
+
+    color:#d1d1d1;
+
+    font-size:14px;
+}
+
+.about-points span{
+
+    color:var(--gold-light);
+
+    margin-right:6px;
+}
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.skill-card{
+
+    background:#0d0d0d;
+
+    border:1px solid #232323;
+
+    padding:30px 25px;
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.skill-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:0;
+    height:2px;
+
+    background:var(--gold);
+
+    transition:.35s;
+}
+
+.skill-card:hover::before{
+    width:100%;
+}
+
+.skill-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:rgba(212,175,55,.45);
+}
+
+.skill-number{
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+}
+
+.skill-card h3{
+
+    font-size:19px;
+
+    margin-bottom:12px;
+}
+
+.skill-card p{
+
+    color:#858585;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+/* =====================================================
+   PROFESSIONAL EXPERTISE
+===================================================== */
+
+.expertise{
+
+    background:#090909;
+}
+
+.expertise-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:24px;
+}
+
+.expertise-card{
+
+    padding:35px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #151515,
+        #0b0b0b
+    );
+
+    border:1px solid #252525;
+
+    transition:.35s;
+}
+
+.expertise-card:hover{
+
+    transform:translateY(-7px);
+
+    border-color:rgba(212,175,55,.5);
+}
+
+.expertise-number{
+
+    color:var(--gold-light);
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+}
+
+.expertise-card h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.expertise-card p{
+
+    color:#909090;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.projects{
+
+    background:#060606;
+}
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.project{
+
+    height:340px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background-size:cover;
+
+    background-position:center;
+
+    border:1px solid #242424;
+
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(212,175,55,.5);
+}
+
+.project:nth-child(1){
+
+    background-image:
+
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.85)
+    ),
+
+    url("https://media.istockphoto.com/id/1965630496/photo/customers-link-their-credit-cards-to-pay-for-products-online-online-shopping-concept-woman.webp?a=1&b=1&s=612x612&w=0&k=20&c=t-O71F-ZPcc33n5cehzNKrsVp_A-JOTrxSaQMH5hW8U=");
+}
+
+.project:nth-child(2){
+
+    background-image:
+
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.85)
+    ),
+
+    url("https://media.istockphoto.com/id/2220840168/photo/businesswoman-smiling-while-using-mobile-phone-in-modern-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=GgrOZC1Ng5v_nq7cnieeRtwnQvye3XDYkMa7UFPdoq0=");
+}
+
+.project:nth-child(3){
+
+    background-image:
+
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.85)
+    ),
+
+    url("https://plus.unsplash.com/premium_photo-1771226278974-e26a307888e2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGxpZmVzdHlsZSUyMGJsb2clMjBwaWNzfGVufDB8fDB8fHww");
+}
+
+.project:nth-child(4){
+
+    background-image:
+
+    linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.85)
+    ),
+
+    url("https://media.istockphoto.com/id/2224110887/photo/confident-woman-presenting-on-ai-design-at-modern-technology-conference.webp?a=1&b=1&s=612x612&w=0&k=20&c=Er__3eSVYPrKZPqTsufniX1uFADMF-XEHW9_25icOKA=");
+}
+
+.project-info{
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    padding:30px;
+}
+
+.project-info small{
+
+    color:var(--gold-light);
+
+    font-size:11px;
+
+    letter-spacing:2px;
+}
+
+.project-info h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    margin-top:8px;
+}
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services{
+
+    background:#0c0c0c;
+}
+
+.services-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.service{
+
+    padding:32px;
+
+    background:#111;
+
+    border-left:2px solid var(--gold);
+
+    transition:.3s;
+}
+
+.service:hover{
+
+    transform:translateY(-5px);
+
+    background:#151515;
+}
+
+.service h3{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:23px;
+
+    margin-bottom:13px;
+}
+
+.service p{
+
+    color:#888;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+
+    text-align:center;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(212,175,55,.08),
+        transparent 50%
+    ),
+
+    #070707;
+}
+
+.contact .section-heading p{
+
+    margin-left:auto;
+
+    margin-right:auto;
+}
+
+.contact h2{
+
+    font-size:52px;
+}
+
+.contact-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.contact-link{
+
+    padding:14px 25px;
+
+    border:1px solid #292929;
+
+    color:#d0d0d0;
+
+    font-size:13px;
+
+    transition:.3s;
+}
+
+.contact-link:hover{
+
+    border-color:var(--gold);
+
+    color:var(--gold-light);
+
+    transform:translateY(-3px);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#040404;
+
+    border-top:1px solid #181818;
+
+    color:#666;
+
+    font-size:13px;
+}
+
+footer span{
+    color:var(--gold-light);
+}
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    z-index:9998;
+
+    box-shadow:
+    0 6px 25px rgba(37,211,102,.35);
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.12);
+
+    box-shadow:
+    0 8px 30px rgba(37,211,102,.5);
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:950px){
+
+    nav{
+
+        display:none;
+
+        position:absolute;
+
+        right:5%;
+
+        top:75px;
+
+        width:230px;
+
+        padding:25px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:22px;
+
+        background:#101010;
+
+        border:1px solid #292929;
+
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .skills-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+
+    .expertise-grid,
+    .services-grid{
+
+        grid-template-columns:
+        1fr 1fr;
+
+    }
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:15px 5%;
+    }
+
+    .logo-mark{
+
+        width:38px;
+        height:38px;
+
+    }
+
+    .logo-name{
+        font-size:22px;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .hero{
+
+        min-height:100svh;
+
+        background-position:
+        63% center;
+
+    }
+
+    .hero-content{
+
+        margin-left:6%;
+
+        margin-right:6%;
+
+        padding-top:70px;
+    }
+
+    .hero h1{
+
+        font-size:53px;
+
+    }
+
+    .hero-description{
+
+        font-size:14px;
+
+    }
+
+    .section-heading h2{
+
+        font-size:38px;
+
+    }
+
+    .about-photo{
+
+        height:400px;
+
+    }
+
+    .skills-grid,
+    .expertise-grid,
+    .services-grid,
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .about-points{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact h2{
+
+        font-size:40px;
+
+    }
+
+    .whatsapp{
+
+        width:53px;
+
+        height:53px;
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+}
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+<a href="#home" class="logo">
+
+    <div class="logo-mark">
+        <span>L</span>
+    </div>
+
+    <div class="logo-name">
+        Laiba<span>’s</span>
+    </div>
+
+</a>
+
+
+<nav id="nav">
+
+<a href="#home">Home</a>
+
+<a href="#about">About</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#expertise">Expertise</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#services">Services</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+
+Web Developer • UI/UX • WordPress
+
+</div>
+
+
+<h1>
+
+Building
+
+<span>Digital</span>
+
+<br>
+
+Experiences.
+
+</h1>
+
+
+<p class="hero-description">
+
+I'm Laiba Faisal, a passionate Web Developer focused on creating
+responsive, modern and user-friendly websites for businesses,
+brands, portfolios and online platforms.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn btn-gold">
+View My Work
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Hire Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+<div class="section-heading">
+
+<small>About Laiba’s</small>
+
+<h2>Creative. Technical. Professional.</h2>
+
+<p>
+A combination of development skills, creative design and
+attention to user experience.
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-photo">
+</div>
+
+
+<div class="about-content">
+
+<h3>Hi, I'm Laiba.</h3>
+
+<p>
+
+I am a Web Developer and Creative Designer passionate about
+creating modern digital experiences that combine clean code,
+responsive design and usability.
+
+</p>
+
+<p>
+
+I work with front-end technologies, WordPress and creative
+design tools to transform ideas into professional websites
+and digital experiences.
+
+</p>
+
+
+<div class="about-points">
+
+<div>
+<span>✓</span>
+Responsive Web Design
+</div>
+
+<div>
+<span>✓</span>
+Front-End Development
+</div>
+
+<div>
+<span>✓</span>
+UI/UX Design
+</div>
+
+<div>
+<span>✓</span>
+WordPress Development
+</div>
+
+<div>
+<span>✓</span>
+Website Customization
+</div>
+
+<div>
+<span>✓</span>
+Creative Graphic Design
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+<div class="section-heading">
+
+<small>Technical Skills</small>
+
+<h2>My Toolkit</h2>
+
+<p>
+Technologies and creative tools I use to build digital experiences.
+</p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+01 / DEVELOPMENT
+</div>
+
+<h3>HTML5</h3>
+
+<p>
+Semantic and structured website development.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+02 / STYLING
+</div>
+
+<h3>CSS3</h3>
+
+<p>
+Responsive layouts, animations and modern styling.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+03 / PROGRAMMING
+</div>
+
+<h3>JavaScript</h3>
+
+<p>
+Interactive and dynamic website functionality.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+04 / CMS
+</div>
+
+<h3>WordPress</h3>
+
+<p>
+Professional websites and content management.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+05 / DESIGN
+</div>
+
+<h3>Figma</h3>
+
+<p>
+Modern UI/UX designs and website prototypes.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+06 / GRAPHICS
+</div>
+
+<h3>CorelDRAW</h3>
+
+<p>
+Creative graphics, branding and print designs.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+07 / DESIGN
+</div>
+
+<h3>Photoshop</h3>
+
+<p>
+Image editing, digital graphics and visual design.
+</p>
+
+</div>
+
+
+<div class="skill-card">
+
+<div class="skill-number">
+08 / PRODUCTIVITY
+</div>
+
+<h3>MS Office</h3>
+
+<p>
+Professional documents, presentations and productivity tools.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERTISE
+===================================================== -->
+
+<section class="expertise" id="expertise">
+
+<div class="section-heading">
+
+<small>Professional Expertise</small>
+
+<h2>What I Can Do</h2>
+
+<p>
+Professional digital solutions for businesses, brands and remote clients.
+</p>
+
+</div>
+
+
+<div class="expertise-grid">
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+01 —
+</div>
+
+<h3>Responsive Web Development</h3>
+
+<p>
+
+Creating responsive websites that work smoothly across
+desktop, tablet and mobile devices.
+
+</p>
+
+</div>
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+02 —
+</div>
+
+<h3>UI/UX Design</h3>
+
+<p>
+
+Designing clean, modern and user-friendly interfaces
+with attention to layout and usability.
+
+</p>
+
+</div>
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+03 —
+</div>
+
+<h3>Business Websites</h3>
+
+<p>
+
+Professional websites for businesses, personal brands,
+services and online portfolios.
+
+</p>
+
+</div>
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+04 —
+</div>
+
+<h3>E-Commerce Websites</h3>
+
+<p>
+
+Modern online store interfaces with product-focused
+layouts and responsive shopping experiences.
+
+</p>
+
+</div>
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+05 —
+</div>
+
+<h3>Website Customization</h3>
+
+<p>
+
+Improving existing websites, layouts, sections,
+responsiveness and visual presentation.
+
+</p>
+
+</div>
+
+
+<div class="expertise-card">
+
+<div class="expertise-number">
+06 —
+</div>
+
+<h3>Creative Digital Design</h3>
+
+<p>
+
+Creating digital graphics, promotional designs,
+branding materials and visual content.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section class="projects" id="projects">
+
+<div class="section-heading">
+
+<small>Selected Work</small>
+
+<h2>Featured Projects</h2>
+
+<p>
+Website concepts and digital projects created for different industries.
+</p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project">
+
+<div class="project-info">
+
+<small>
+01 / E-COMMERCE
+</small>
+
+<h3>
+Fashion Store
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-info">
+
+<small>
+02 / BUSINESS
+</small>
+
+<h3>
+Business Website
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-info">
+
+<small>
+03 / BLOG
+</small>
+
+<h3>
+Lifestyle Blog
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-info">
+
+<small>
+04 / EDUCATION
+</small>
+
+<h3>
+Education Platform
+</h3>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+<div class="section-heading">
+
+<small>Services</small>
+
+<h2>How I Can Help</h2>
+
+<p>
+Professional digital services for clients and remote teams.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+
+<h3>
+Website Development
+</h3>
+
+<p>
+
+Responsive websites built with clean HTML,
+CSS and JavaScript.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+WordPress Development
+</h3>
+
+<p>
+
+Professional WordPress websites,
+customization and content management.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+UI/UX Design
+</h3>
+
+<p>
+
+Modern interface designs and website
+prototypes using Figma.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+Website Redesign
+</h3>
+
+<p>
+
+Modernizing existing websites with improved
+layouts, responsiveness and visual design.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+Graphic Design
+</h3>
+
+<p>
+
+Creative graphics including flyers,
+brochures, cards, logos and promotional designs.
+
+</p>
+
+</div>
+
+
+<div class="service">
+
+<h3>
+Remote Web Support
+</h3>
+
+<p>
+
+Available for remote web development,
+website design and digital projects.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+<div class="section-heading">
+
+<small>Let's Work Together</small>
+
+<h2>Have a project in mind?</h2>
+
+<p>
+
+I'm available for freelance projects and remote
+web development opportunities.
+
+</p>
+
+</div>
+
+
+<div class="contact-links">
+
+
+<a
+class="contact-link"
+href="mailto:your-email@example.com">
+
+✉ Email Me
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://github.com/"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+<a
+class="contact-link"
+href="https://www.linkedin.com/"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+
+<a
+class="contact-link"
+href="#home">
+
+Back to Top ↑
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+© 2026
+
+<span>Laiba’s</span>
+
+— Web Developer.
+All Rights Reserved.
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
+
+<a
+class="whatsapp"
+href="https://wa.me/923001234567"
+target="_blank"
+aria-label="Chat with Laiba on WhatsApp">
+
+☎
+
+</a>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("nav")
+    .classList
+    .toggle("active");
+
+}
+
+
+document
+.querySelectorAll("nav a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("nav")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
